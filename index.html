@@ -7,18 +7,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
     <style>
       .header {
-        display: flex;
+        display: grid;
         position: fixed;
+        grid-template-columns: 100px 1fr 300px;
+        grid-template-rows: 150px;
         top: 0;
         left: 0;
         right: 0;
         height: 150px;
-        /* justify-content: center; */
         background-color: pink;
+        min-width: 200px;
       }
 
       .logo {
-        height: 100%;
+        height: 150px;
+        padding-left: 0;
+        padding-right: 0;
       }
 
       .team-name {
@@ -32,8 +36,9 @@
 
   <body style="margin-bottom: 10000px">
     <div class="header">
-      <img src="test_logo.png" alt="your mom" class="logo">
+      <div>"Hamburger Menu</div>
       <div class="team-name">Cyber Sages</div>
+      <div><img src="logo.png" alt="test" class="logo"></div>
    </div>
   </body>
 </html>
