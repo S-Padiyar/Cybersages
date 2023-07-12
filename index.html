@@ -9,12 +9,12 @@
       .header {
         display: grid;
         position: fixed;
-        grid-template-columns: 100px 1fr 300px;
-        grid-template-rows: 300px;
+        grid-template-columns: 300px 1fr 300px;
+        grid-template-rows: 200px;
         top: 0;
         left: 0;
         right: 0;
-        background-color: pink;
+        background-color: rgb(69, 172, 206);
       }
 
       .logo {
@@ -27,7 +27,7 @@
       .team-name {
         font-family: Orbitron;
         font-size: 100px;
-        text-align: center;
+        color: white;
       }
 
       .three-lines-icon {
@@ -41,7 +41,9 @@
   <body style="margin-bottom: 10000px">
     <div class="header">
       <div>"Hamburger Menu</div>
-      <div class="team-name">Cyber Sages</div>
+      <div style= "display: flex; justify-content: center; align-items: center;">
+        <p class="team-name">Cyber Sages</p>
+      </div>
       <div><img src="logo.png" alt="test" class="logo"></div>
    </div>
   </body>
