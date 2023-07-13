@@ -13,24 +13,34 @@
       }
       .Header {
         display: grid;
-        grid-template-columns: 300px 1fr 400px;
+        grid-template-columns: 200px 1fr 200px;
+        grid-template-rows: 100px;
+        left: 0;
+        right: 0;
+        top: 0;
+        position: fixed;
       }
 
       .Selection-Container {
-        background-color: lightblue;
         display: flex;
         justify-content: center;
+        align-items: center;
+        border-left: 5px solid black;
+        border-right: 5px solid black;
+        border-bottom: 5px solid black;
       }
       .Title-Container {
-        background-color: lightblue;
         display: flex;
         justify-content: center;
+        align-items: center;
         min-width: 1000px;
         max-width: 2000px;
+        background-color: rgb(33, 33, 212);
       }
       .Logo-Container {
-        background-color: lightblue;
         display: flex;
+        border-right: 5px solid black;
+        align-items: center;
       }
 
       .Selection {
@@ -38,10 +48,8 @@
       }
       .Title {
         display: inline-block;
-        margin-top: 60px;
-        margin-bottom: 60px;
         font-family: Orbitron;
-        font-size: 120px;
+        font-size: 60px;
         color: white;
         font-weight: bold;
       }
@@ -58,33 +66,52 @@
         grid-template-columns: 300px;
       }
 
+      .Menu-Icon {
+        display: inline-block;
+        width: 100px; 
+        height: auto;
+        cursor: pointer;
+      }
+
       .About-Us-Container {
         background-color: lightblue;
+        border-left: 5px solid black;
+        border-right: 5px solid black;
       }
       .Events-Container {
         background-color: pink;
+        border-left: 5px solid black;
+        border-right: 5px solid black;
       }
       .Contact-Container {
         background-color: lightblue;
+        border-left: 5px solid black;
+        border-right: 5px solid black;
       }
       .History-Container {
         background-color: pink;
+        border-left: 5px solid black;
+        border-right: 5px solid black;
       }
       .Github-Container {
         background-color: lightblue;
+        border-left: 5px solid black;
+        border-right: 5px solid black;
       }
       .Sponsors-Container {
         background-color: pink;
+        border-left: 5px solid black;
+        border-right: 5px solid black;
       }
 
     </style>
   </head> 
 
-  <body>
+  <body style="padding-bottom: 2000px;">
     <div class="Header">
       <div class="Selection-Container">
         <p class="Selection">
-          300px
+          <img src="three-lines.png" alt="test" class="Menu-Icon">
         </p>
       </div>
 
@@ -95,33 +122,32 @@
       </div>
 
       <div class="Logo-Container">
-        <img src="Final-Logo.png" alt="test" class="Logo">
+        <img src="Test_cyber_sages_logo.png" alt="test" class="Logo">
       </div>
-    </div>
-
-    <div class="Menu">
-      <div class="About-Us-Container">
-
-      </div>
-
-      <div class="Events-Container">
-
-      </div>
-
-      <div class="Contact-Container">
-
-      </div>
-
-      <div class="History-Container">
-
-      </div>
-
-      <div class="Github-Container">
-
-      </div>
-
-      <div class="Sponsors-Container">
-
+      <div class="Menu">
+        <div class="About-Us-Container">
+  
+        </div>
+  
+        <div class="Events-Container">
+  
+        </div>
+  
+        <div class="Contact-Container">
+  
+        </div>
+  
+        <div class="History-Container">
+  
+        </div>
+  
+        <div class="Github-Container">
+  
+        </div>
+  
+        <div class="Sponsors-Container">
+  
+        </div>
       </div>
     </div>
   </body>
