@@ -13,7 +13,7 @@
       }
 
 
-      .Header {
+      .header {
         display: grid;
         grid-template-columns: 200px 1fr;
         grid-template-rows: 100px;
@@ -45,37 +45,7 @@
         margin-right: 10%;
       }
 
-      .About-Us-Container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .Events-Container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .Contact-Container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .History-Container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .Github-Container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-  
-      .Sponsors-Container {
+      .menu-container {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -90,10 +60,11 @@
         cursor: pointer;
         transition: box-shadow, 0.15s;
         color: white;
+        font-family: orbitron;
         font-weight: bold;
-        font-size: 20px;
-        font-family: Orbitron;
+        font-size: 18px;
       }
+
       .Header-Buttons:hover {
         box-shadow: inset 0.5px 0.5px 2px rgba(0, 0, 0, 0.8);
       }
@@ -102,44 +73,44 @@
   </head> 
 
   <body style="padding-bottom: 2000px;">
-    <div class="Header">
+    <div class="header">
 
       <div class="Logo-Container">
         <img src="Test_cyber_sages_logo.png" alt="test" class="Logo">
       </div>
 
       <div class="Menu">
-        <div class="About-Us-Container">
+        <div class="menu-container">
           <button class="Header-Buttons"> 
             About Us
           </button>
         </div>
   
-        <div class="Events-Container">
+        <div class="menu-container">
           <button class="Header-Buttons"> 
             Events
           </button>
         </div>
   
-        <div class="Contact-Container">
+        <div class="menu-container">
           <button class="Header-Buttons"> 
             Contact
           </button>
         </div>
   
-        <div class="History-Container">
+        <div class="menu-container">
           <button class="Header-Buttons"> 
             History
           </button>
         </div>
   
-        <div class="Github-Container">
+        <div class="menu-container">
           <button class="Header-Buttons"> 
             Github
           </button>
         </div>
   
-        <div class="Sponsors-Container">
+        <div class="menu-container">
           <button class="Header-Buttons"> 
             Sponsors
           </button>
