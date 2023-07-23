@@ -1,8 +1,8 @@
       const menu = Array.from(document.getElementsByClassName("hamburger-menu"));
       const menuicon = Array.from(document.getElementsByClassName("hamburger-menu-icon"));
       const dropdownMenu = Array.from(document.getElementsByClassName("dropdown-container"));
-      const aboutUsLink = Array.from(document.getElementsByClassName("about-us-link"));
-      const aboutUsButton = Array.from(document.getElementsByClassName("about-us-button"));
+      const aboutUsLink = Array.from(document.getElementsByClassName("about-us-link-mobile"));
+      const aboutUsButton = Array.from(document.getElementsByClassName("about-us-button-mobile"));
       const Shadow = document.getElementsByClassName("header");
       const ShadowMobile = document.getElementsByClassName("header-mobile");
       const arrow = document.getElementsByClassName("arrow-mobile");
