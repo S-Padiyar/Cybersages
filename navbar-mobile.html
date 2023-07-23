@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CyberSages Website</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.3.3/platform.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link rel ="stylesheet" href="navbar-mobile.css">
+  </head> 
+
+  <body style="padding-top: 2000px">
+    <div class="header header-mobile">
+      <div class="logo-container">
+        <a href="index.html" class="logo-link">
+          <img src="images/logo.png" alt="test" class="logo">
+        </a>
+      </div>
+      <div class="menu-container">
+        <div class="hamburger-menu-container">
+            <img class="hamburger-menu-icon" src="images/hamburger-menu.jpg" onclick="menuFunction()">
+            <div class="hamburger-menu">
+              <div class="dropdown-grid"> 
+                <a class="hamburger-menu-links about-us-link-mobile" style="border-top-left-radius: 10px;" onclick="dropdownFunction()"> 
+                  <button class="hamburger-menu-button about-us-button-mobile"> About Us </button>
+                </a>
+                <div class="dropdown-container-mobile">
+                  <a class="dropdown-links"><button class="dropdown-button"> Join Us </button> </a>
+                  <a class="dropdown-links"><button class="dropdown-button"> Events </button> </a>
+                  <a class="dropdown-links"><button class="dropdown-button"> About Us </button> </a>
+                </div>
+              </div>
+              <div class="hamburger-menu-links-container">
+                <a class="hamburger-menu-links">
+                  <button class="hamburger-menu-button"> Events </button>
+                </a>
+              </div>
+              <div class="hamburger-menu-links-container">
+                <a class="hamburger-menu-links" style="border-bottom-left-radius: 10px;">
+                  <button class="hamburger-menu-button"> Donate </button>
+                </a>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="navbar.js"></script>
+  </body>
+</html>
