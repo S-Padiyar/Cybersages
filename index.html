@@ -14,26 +14,29 @@
         transition: none !important;
         animation: none !important;
       }
+      
       @media screen and (max-width: 600px){
         .header {
           display: none;
         }
+
         .header-mobile {
           display: grid;
         }
-        
       }
+
       @media screen and (min-width: 601px){
         .header {
           display: grid;
         }
+
         .header-mobile {
           display: none;
         }
       }
     </style>
   </head> 
-  <body style="padding-top: 2000px;">
+  <body style="padding-top: 2000px">
     <div class="header">
       <div class="logo-container">
         <a href="index.html" class="logo-link">
@@ -41,27 +44,39 @@
         </a>
       </div>
       <div class="menu-container">
-        <div class="header-link-container about-us-container">
-            <a class="header-link about-us-link">
-              <button class="header-button about-us-button">
-                Our  Team 
-              </button> 
-              <img class="arrow" src="images/arrow.png">
-            </a>
-            <div class="dropdown-container">
-              <div class="dropdown-links-container">
-                <a class="dropdown-links" style="border-top-left-radius: 10px; border-top-right-radius: 10px"><button class="dropdown-button" style="border-top-left-radius: 10px; border-top-right-radius: 10px"> Contacts </button></a>
-              </div>
-              <div class="dropdown-links-container">
-                <a class="dropdown-links"><button class="dropdown-button">Meet The Team</button></a>
-              </div>
-              <div class="dropdown-links-container">
-                <a class="dropdown-links" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px"><button class="dropdown-button" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px"> Join The Team </button></a>
-              </div>
-            </div>
+        <div class="header-link-container">
+          <a class="header-link">
+            <button class="header-button">
+              About First
+            </button>
+          </a>
         </div>
-        <div class="header-link-container"><a class="header-link"><button class="header-button">Events</button></a></div>
-        <div class="header-link-container"><a class="header-link"><button class="header-button">Donate</button></a></div>
+        <div class="header-link-container">
+          <a class="header-link">
+            <button class="header-button">
+              Sponsor Us
+            </button>
+          </a>
+        </div>
+        <div class="header-link-container about-us-container">
+          <a class="header-link about-us-link">
+            <button class="header-button about-us-button">
+              Our Team
+            </button> 
+            <img class="arrow" src="images/arrow.png">
+          </a>
+          <div class="dropdown-container">
+            <div class="dropdown-links-container">
+              <a class="dropdown-links" style="border-top-left-radius: 10px; border-top-right-radius: 10px"><button class="dropdown-button" style="border-top-left-radius: 10px; border-top-right-radius: 10px"> Contacts </button></a>
+            </div>
+            <div class="dropdown-links-container">
+              <a class="dropdown-links"><button class="dropdown-button">Meet The Team</button></a>
+            </div>
+            <div class="dropdown-links-container">
+              <a class="dropdown-links" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px"><button class="dropdown-button" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px"> Join The Team </button></a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="header-mobile">
