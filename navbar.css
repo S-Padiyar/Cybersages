@@ -1,7 +1,7 @@
 .header {
   display: none;
-  grid-template-columns: 150px 1fr;
-  grid-template-rows: 100px;
+  grid-template-columns: 80px 1fr;
+  grid-template-rows: 75px;
   background-color: rgb(55, 124, 145);
   box-shadow: none;
   position: fixed;
@@ -25,7 +25,7 @@
 }
 
 .logo {
-  height: 90px;
+  height: 60px;
   border-radius: 50%;
   cursor: pointer;
   transition: opacity 0.30s;
@@ -37,7 +37,7 @@
 
 .menu-container {
   display: grid;
-  grid-template-columns: 100px 150px 135px;
+  grid-template-columns: 150px 150px 150px;
   grid-column-gap: 20px;
   padding-right: 10%;
   justify-content: right;
