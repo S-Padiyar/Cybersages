@@ -5,10 +5,6 @@
     box-sizing: border-box;
   }
 
-  body {
-    padding-top: 2000px;
-  }
-
   header {
     background-color: rgb(55, 124, 145);
     position: fixed;
@@ -43,7 +39,7 @@
   }
 
   .logo {
-    height: 65px;
+    height: 64px;
     border-radius: 50%;
     transition: 0.30s;
   }
@@ -84,7 +80,7 @@
     border-radius: 1.5px;
   }
 
-  @media(max-width: 768px) {
+  @media(max-width: 900px) {
     .hamburger {
       display: block;
     }
