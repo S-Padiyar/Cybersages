@@ -1,24 +1,9 @@
-<<<<<<< HEAD
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
   }
-=======
-.header {
-  display: none;
-  grid-template-columns: 80px 1fr;
-  grid-template-rows: 75px;
-  background-color: rgb(55, 124, 145);
-  box-shadow: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  box-shadow: none;
-  transition: box-shadow 0.30s;
-}
->>>>>>> 2979ebcfcc20e774481cf4a45a62ced5012abe9a
 
   body {
     padding-top: 2000px;
@@ -32,18 +17,9 @@
     left: 0;
   }
 
-<<<<<<< HEAD
   li {
     list-style: none;
   }
-=======
-.logo {
-  height: 60px;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: opacity 0.30s;
-}
->>>>>>> 2979ebcfcc20e774481cf4a45a62ced5012abe9a
 
   a {
     color: white;
@@ -51,7 +27,6 @@
     font-family: Orbitron;
   }
 
-<<<<<<< HEAD
   .navbar {
     min-height: 70px;
     display: flex;
@@ -60,15 +35,6 @@
     padding: 0 24px;
     transition: 0.30s;
   }
-=======
-.menu-container {
-  display: grid;
-  grid-template-columns: 150px 150px 150px;
-  grid-column-gap: 20px;
-  padding-right: 10%;
-  justify-content: right;
-}
->>>>>>> 2979ebcfcc20e774481cf4a45a62ced5012abe9a
 
   .nav-logo {
     display: flex;
