@@ -9,25 +9,18 @@ hamburger.addEventListener("click", () => {
 })
 
 Array.from(navLinks).forEach(link => {
-  link.addEventListener("click", () => {
+  link.addEventListener("click", event => {
+    event.preventDefault(); // Prevent the default link navigation behavior
+
     hamburger.classList.remove("active");
     navMenu.classList.remove("active");
+
+    // Add a brief timeout before navigating to the link's destination
+    setTimeout(() => {
+      window.location.href = link.getAttribute("href");
+    }, 300); // You can adjust the timeout duration (300ms in this example)
   });
 });
 
-function toggle() {
-  const Shadow = document.querySelectorAll(".navbar");
-  
-  if (window.scrollY === 0) {
-    for (let i = 0; i < Shadow.length; i++) {
-      Shadow[i].style.boxShadow = "none";
-    }
-  } else {
-    for (let i = 0; i < Shadow.length; i++) {
-      Shadow[i].style.boxShadow = "0px 2px 5px rgba(55, 124, 145, 0.5)";
-    }
-  }
-}
 
-window.onscroll = toggle;
 

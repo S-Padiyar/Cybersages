@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Cyber Sages</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.3.3/platform.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link href="/css files/navbar.css" rel="stylesheet">
+    <link href="/css files/footer.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+
+
+    <style>
+        body {
+          padding-top: 70px;
+        }
+
+        .members-info {
+          background-color: rgb(21, 89, 145);
+        }
+
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px; /* Adjust this value to set the spacing between cells */
+          }
+
+        .grid-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 50px; /* Adjust the height as needed */
+            flex-basis: calc(25% - 10px); /* 4 columns, minus gap space */
+            /* For a 3 column layout, use: flex-basis: calc(33.33% - 10px); */
+        }
+
+        .bottom-row {
+            flex-basis: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .grid-item img {
+          width: 300px;
+          height: auto;
+          border-radius: 50%;
+          border: solid 5px #d16c00;
+        }
+
+        .grid-item p {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: white;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 20px;
+          margin-top: 5px;
+          padding-bottom: 50px;
+        }
+
+        .members-title {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          font-size: 40px;
+          padding-top: 50px;
+          padding-bottom: 40px;
+        }
+
+        .coaches-info {
+          background-color: rgb(35, 75, 105);
+        }
+
+        .coaches-title {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 40px;
+          color: white;
+          padding-top: 50px;
+          padding-bottom: 40px;
+        }
+
+        .coaches-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .coaches-grid img{
+          width: 500px;
+          border-radius: 50%;
+          border: solid 5px #d16c00;
+        }
+
+        .coaches-grid p {
+          font-size: 20px;
+          color: white;
+          font-family: Arial, Helvetica, sans-serif;
+          margin-top: 10px;
+          display: flex;
+          justify-content: center;
+        }
+
+        .group-photo {
+          width: 75%;
+          height: auto;
+          box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+        }
+
+
+        @media (max-width: 1150px) {
+          .coaches-grid  {
+            grid-template-rows: auto auto;
+            grid-template-columns: none;
+          }
+        }
+
+        @media (max-width: 600px) {
+          .coaches-grid img {
+            width: 300px
+          }
+        }
+
+        @media (max-width: 800px) {
+          .group-photo {
+            width: 100%;
+          }
+        }
+
+        .group-photo-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding-top: 50px;
+          padding-bottom: 50px;
+          background-color: rgb(21, 89, 145);
+        }
+
+        .about-us-container {
+          background-color: rgb(35, 75, 105);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 50px;
+          text-align: center;
+        }
+
+        .about-us-title {
+          font-family: Arial, Helvetica, sans-serif;
+          color: white;
+        }
+
+    
+    </style>
+  
+
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <a class="nav-logo nav-link " href="index.html">
+          <img src="/images/logo.png" class="logo">
+          <p class="team-number">
+            #23541
+          </p>
+        </a>
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="aboutUs.html" class="nav-link"> About Us </a></li>
+          <li class="nav-item"><a href="aboutFirst.html" class="nav-link"> About FIRST </a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link"> Contact </a></li>
+          <li class="nav-item"><a href="#" class="nav-link sponsor-btn"> Sponsor Us </a></li>
+        </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </nav>
+    </header> 
+  
+    <div class="members-info">
+      <p class="members-title"> Members </p>
+      <div class="grid-container">
+        <div class="grid-item">
+          <div class="members-info">
+            <img src="/ftc images/image-1.jpg">
+            <p> Sahil Aggarwal </p>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="members-info">
+            <img src="/ftc images/image-1.jpg">
+            <p> Sunmay Padiyar  </p>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="members-info">
+            <img src="/ftc images/image-1.jpg">
+            <p> Kavin Wesley </p>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="members-info">
+            <img src="/ftc images/image-1.jpg">
+            <p> Jc Valencia </p>
+          </div>
+        </div>
+          <!-- Bottom row -->
+        <div class="grid-item">
+          <div class="members-info">
+            <img src="/ftc images/image-1.jpg">
+            <p> Eric Nguyen </p>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="members-info">
+            <img src="/ftc images/image-1.jpg">
+            <p> Henry Kuhns </p>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="members-info">
+            <img src="/ftc images/image-1.jpg">
+            <p> Kalp Shah </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="coaches-info">
+      <p class="coaches-title"> Coaches </p>
+      <div class="coaches-grid">
+        <div>
+          <div style="display: flex; justify-content: center; align-items: center;">
+            <img src="/ftc images/image-1.jpg">
+          </div>
+          <p> Priti Padhke</p>
+          <p style="padding-bottom: 50px; padding-top: 10px;"> - Main Coach </p>
+        </div>
+        <div>
+          <div style="display: flex; justify-content: center; align-items: center;">
+            <img src="/ftc images/image-1.jpg">
+          </div>
+          <p> Ameya Padiyar </p>
+          <p style="padding-bottom: 50px; padding-top: 10px;"> - Assistant Coach </p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="group-photo-container">
+      <img src="/ftc images/image-1.jpg" class="group-photo">
+    </div>
+
+    <div class="about-us-container">
+      <div class="about-us-info">
+        <h1 class="about-us-title">
+          About Us
+        </h1>
+        <p class="about-us-info-text">
+
+        </p>
+      </div>
+    </div>
+    
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-rows">
+          <div class="footer-col footer-logo-container">
+            <button class="footer-button">
+              <img src="/images/Footer-Logo.png" class="footer-logo">
+            </button>
+          </div>
+          <div class="footer-col">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><a href="index.html"> Home </a></li>
+              <li><a href="aboutUs.html"> About Us </a></li>
+              <li><a href="#"> Donate </a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4> Contact </h4>
+            <ul>
+              <li><a href="mailto: cybersagesrobotics@gmail.com"> Email Us </a></li>
+              <li><p href="#" style="color: white;"> 571-267-0266 </p></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4> Learn More </h4>
+            <ul>
+              <li><a target="_blank" href="https://www.firstinspires.org/"> FIRST's Website </a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="/javascript files/navbar.js"></script>
+  </body>
+</html>

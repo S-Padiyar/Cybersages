@@ -1,0 +1,147 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: #2274A5;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 99;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  font-family: 'Orbitron', Arial, sans-serif; /* Use Orbitron font */
+}
+
+.navbar {
+  min-height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.logo {
+  height: 64px;
+  border-radius: 50%;
+  transition: 0.30s;
+}
+
+.nav-logo:hover .logo {
+  opacity: 0.8;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  padding-right: 6%;
+}
+
+.nav-link {
+  font-weight: bold;
+  color: white;
+  font-size: 18px;
+  margin-right: 10px; 
+  transition: 0.30s ease;
+}
+
+.nav-link:hover {
+  color: lightgrey; 
+  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3); 
+}
+
+.team-number {
+  margin-left: 20px;
+  font-size: 25px;
+}
+
+.sponsor-btn {
+  padding: 10px 24px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  background-color: #D16C00; 
+  transition: all  0.3s;
+  border-radius: 50px;
+}
+
+.sponsor-btn:hover {
+  background-color: rgb(35, 75, 105); 
+  color: lightgrey; 
+  text-shadow: none;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 30px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: white;
+  border-radius: 1.5px;
+}
+
+@media (max-width: 1000px) {
+  .hamburger {
+    display: block;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .nav-menu {
+    position: fixed;
+    right: -100%;
+    top: 70px;
+    gap: 0;
+    flex-direction: column;
+    background-color: #2274A5;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    padding: 0;
+  }
+
+  .nav-item {
+    margin: 16px 0;
+  }
+
+  .nav-menu.active {
+    right: 0;
+  }
+}
