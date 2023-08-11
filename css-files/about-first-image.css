@@ -121,6 +121,9 @@ body {
     align-items: center;
     font-family: Arial;
     margin-top: 20px;
+    text-align: center;
+    margin-left: 20px;
+    margin-right: 20px;
   }
 
   .learn-more-button-container {
@@ -181,10 +184,5 @@ body {
     }
   }
 
-  @media (max-width: 400px) {
-    .learn-more {
-      font-size: 15px;
-    }
-  }
 
   
