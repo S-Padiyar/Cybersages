@@ -1,48 +1,138 @@
-<html>
-  <center><head>
-   <font style = "font-size: 200">
-   SUNMAY 
-   </font>
-  <audio controls autoplay>
-  
-  <source src="https://cdn.glitch.global/354a85de-f1a0-49ef-a79b-7dd7c3ede212/Rick%20Astley%20-%20Never%20Gonna%20Give%20You%20Up%20(Official%20Music%20Video).mp3?v=1688435477237" type="audio/mpeg">
- 
-Your browser does not support the audio element.
-</audio>
-    </head> </center>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Cyber Sages</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.3.3/platform.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron
+&display=swap" rel="stylesheet">
+    <link href="css-files/navbar.css" rel="stylesheet">
+    <link href="css-files/footer.css" rel="stylesheet">
+    <link href="css-files/homepage-image.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+      
+    <style>
 
- <body>
-   <style>
-body {
-  background-image: url('data:image/jpeg;base64,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');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 100% 100%;
-}
-</style>
-   
-  </body> 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+      body {
+        padding-top: 70px;
+        background: rgb(35, 75, 105); 
+      }
+
+      ::-webkit-scrollbar {
+        width: 12px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: rgb(35, 75, 105); 
+        margin-block: 5px;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #D16C00;
+        height: 60px;
+        border-radius: 100vh;
+        margin-top: 70px;
+      }
+
+      
+    </style>
+
+
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <a class="nav-logo nav-link " href="https://cybersages.net/">
+          <img src="favicon.png" class="logo">
+          <p class="team-number">
+            #23541
+          </p>
+        </a>
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="https://cybersages.net/about" class="nav-link"> About Us </a></li>
+          <li class="nav-item"><a href="https://cybersages.net/aboutFIRST" class="nav-link"> About FIRST </a></li>
+          <li class="nav-item"><a href="https://cybersages.net/contact" class="nav-link"> Contact </a></li>
+          
+          <li class="nav-item"><a href="https://cybersages.net/pastyears" class="nav-link"> Past Years </a></li>
+          <li class="nav-item"><a href="https://cybersages.net/sponsor" class="nav-link sponsor-btn"> Sponsor Us </a></li>
+        </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </nav>
+    </header>
+
+    <div class="home-page-image-container">
+      <img class="home-page-image" src="images/Team-Image.jpg">
+      <span class="quote">"Technology is best when it brings people together" <br> <br> - Matt Mullenweg </span>
+    </div>
+
+    <div style="background-color: rgb(21, 89, 145); padding-bottom: 20px;">
+      <div class="mission-statement-container">
+        <h1>
+          Welcome
+        </h1 ><br>
+          <p style="font-size: 29.5px; font-family: Inter;">
+        Welcome to the official website of Cyber Sages, where innovation and exploration collide in the world of robotics! Embarking on our third journey, 
+          Cyber Sages is thrilled to introduce you to a passionate group of budding engineers, programmers, and creators. As we take our next bold steps into the 
+          realm of robotics, we invite you to join us on this exciting adventure filled with learning, teamwork, and technological marvels.
+        <p style="font-size: 29.5px; font-family: Inter;">
+      </div>
+      <div style="display: flex; justify-content: center;">
+        <div class="learn-more-container">
+          <p class="learn-more" style="font-size: 28px; font-family: Inter;">
+          If you would like to donate, please visit our Contact page. 
+          <p style="font-size: 29.5px; font-family: Inter;">
+          <div class="learn-more-button-container">
+            <a class="learn-more-button" href="https://www.cybersages.net/contact">
+              Sponsor Us
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-rows">
+          <div class="footer-col footer-logo-container">
+            <button class="footer-button">
+              <img src="favicon.png" class="footer-logo">
+            </button>
+          </div>
+          <div class="footer-col">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><a href="https://cybersages.net/"> Home </a></li>
+              <li><a href="https://cybersages.net/about"> About Us </a></li>
+              <li><a href="https://www.roboticsforyouth.org/donations/cybersages/"> Donate </a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4> Contact </h4>
+            <ul>
+              <li><a href="mailto: cybersagesrobotics@gmail.com"> Email Us </a></li>
+              <li><p href="#" style="color: white;"> 571-267-0266 </p></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4> Learn More </h4>
+            <ul>
+              <li><a target="_blank" href="https://www.firstinspires.org/"> FIRST's Website </a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="javascript-files/navbar.js"></script>
+    <script src="javascript-files/typewriter.js"></script>
+  </body>
 </html>
+
+
+<!--Hello Guys sunmay is ok-->
