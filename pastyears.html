@@ -1,156 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Past Years - Cyber Sages</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet"/>
-    <link href="css-files/navbar.css" rel="stylesheet" />
-    <link href="css-files/footer.css" rel="stylesheet" />
-    <link rel="shortcut icon" type="image/png" href="favicon.png" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Past Years - Cyber Sages</title>
 
-    <style>
-      body {
-        background: rgb(35, 75, 105);
-        font-family: 'Inter', sans-serif;
-        margin: 0;
-        padding: 0;
-        color: white;
-      }
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Inter&display=swap" rel="stylesheet"/>
 
-      .section {
-        padding: 40px 20px;
-        max-width: 1200px;
-        margin: auto;
-      }
+  <!-- Styles -->
+  <link href="css-files/navbar.css" rel="stylesheet" />
+  <link href="css-files/footer.css" rel="stylesheet" />
+  <link rel="shortcut icon" type="image/png" href="favicon.png" />
 
-      .year-heading {
-        text-align: center;
-        font-size: 32px;
-        margin-bottom: 20px;
-      }
+  <style>
+    body {
+      background: rgb(35, 75, 105);
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding-top: 100px; /* Fix scroll issue with fixed navbar */
+      color: white;
+    }
 
-      .gallery {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-      }
+    .section {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
 
-      .gallery img {
-        max-width: 300px;
-        height: auto;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-      }
+    .year-heading {
+      text-align: center;
+      font-size: 32px;
+      font-family: 'Orbitron', sans-serif;
+      margin-bottom: 20px;
+    }
 
-      .year-description {
-        text-align: center;
-        margin: 20px auto;
-        max-width: 800px;
-        font-size: 18px;
-        line-height: 1.6;
-      }
+    .year-description {
+      text-align: center;
+      margin: 20px auto;
+      max-width: 800px;
+      font-size: 18px;
+      line-height: 1.8;
+      font-family: 'Inter', sans-serif;
+    }
 
-      ::-webkit-scrollbar {
-        width: 12px;
-      }
-      ::-webkit-scrollbar-track {
-        background: rgb(35, 75, 105);
-        margin-block: 5px;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #D16C00;
-        height: 60px;
-        border-radius: 100vh;
-        margin-top: 70px;
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <nav class="navbar">
-        <a class="nav-logo nav-link" href="https://cybersages.net/">
-          <img src="favicon.png" class="logo" />
-          <p class="team-number">#23541</p>
-        </a>
-        <ul class="nav-menu">
-          <li class="nav-item"><a href="https://cybersages.net/about" class="nav-link"> About Us </a></li>
-          <li class="nav-item"><a href="https://cybersages.net/aboutFIRST" class="nav-link"> About FIRST </a></li>
-          <li class="nav-item"><a href="https://cybersages.net/contact" class="nav-link"> Contact </a></li>
-          <li class="nav-item"><a href="https://cybersages.net/pastyears" class="nav-link"> Past Years </a></li>
-          <li class="nav-item"><a href="https://cybersages.net/sponsor" class="nav-link sponsor-btn"> Sponsor Us </a></li>
-        </ul>
-        <div class="hamburger">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .gallery img {
+      max-width: 300px;
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    ::-webkit-scrollbar {
+      width: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: rgb(35, 75, 105);
+      margin-block: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #D16C00;
+      border-radius: 100vh;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <a class="nav-logo nav-link" href="https://cybersages.net/">
+        <img src="favicon.png" class="logo" />
+        <p class="team-number">#23541</p>
+      </a>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="https://cybersages.net/about" class="nav-link">About Us</a></li>
+        <li class="nav-item"><a href="https://cybersages.net/aboutFIRST" class="nav-link">About FIRST</a></li>
+        <li class="nav-item"><a href="https://cybersages.net/contact" class="nav-link">Contact</a></li>
+        <li class="nav-item"><a href="https://cybersages.net/pastyears" class="nav-link">Past Years</a></li>
+        <li class="nav-item"><a href="https://cybersages.net/sponsor" class="nav-link sponsor-btn">Sponsor Us</a></li>
+      </ul>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- 2023-2024 Section -->
+  <section class="section">
+    <h1 class="year-heading">2023–2024 Season</h1>
+    <p class="year-description">
+      In the 2023–2024 season, our team tackled exciting new challenges, grew our coding and building skills, and connected with local and regional teams at competitions. These images capture some of our favorite memories!
+    </p>
+    <div class="gallery">
+      <img src="pastyears/2023-1.jpg" alt="2023 event photo" />
+      <img src="pastyears/2023-2.jpg" alt="2023 event photo" />
+      <img src="pastyears/2023-3.jpg" alt="2023 event photo" />
+    </div>
+  </section>
+
+  <!-- 2022-2023 Section -->
+  <section class="section">
+    <h1 class="year-heading">2022–2023 Season</h1>
+    <p class="year-description">
+      The 2022–2023 season was a year of big milestones. We built our most advanced robot yet and focused heavily on community outreach and spreading STEM awareness in our schools.
+    </p>
+    <div class="gallery">
+      <img src="pastyears/2022-1.jpg" alt="2022 event photo" />
+      <img src="pastyears/2022-2.jpg" alt="2022 event photo" />
+      <img src="pastyears/2022-3.jpg" alt="2022 event photo" />
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-rows">
+        <div class="footer-col footer-logo-container">
+          <button class="footer-button">
+            <img src="favicon.png" class="footer-logo" />
+          </button>
         </div>
-      </nav>
-    </header>
-
-    <!-- Section for 2023-2024 -->
-    <section class="section">
-      <h1 class="year-heading">2023-2024 Season</h1>
-      <p class="year-description">
-        In the 2023-2024 season, our team tackled exciting new challenges, grew our coding and building skills, and connected with local and regional teams at competitions. These images capture some of our favorite memories!
-      </p>
-      <div class="gallery">
-        <img src="pastyears/2023-1.jpg" alt="2023 event photo" />
-        <img src="pastyears/2023-2.jpg" alt="2023 event photo" />
-        <img src="pastyears/2023-3.jpg" alt="2023 event photo" />
-      </div>
-    </section>
-
-    <!-- Add another year below by duplicating this section -->
-    <section class="section">
-      <h1 class="year-heading">2022-2023 Season</h1>
-      <p class="year-description">
-        The 2022-2023 season was a year of big milestones. We built our most advanced robot yet and focused heavily on community outreach and spreading STEM awareness in our schools.
-      </p>
-      <div class="gallery">
-        <img src="pastyears/2022-1.jpg" alt="2022 event photo" />
-        <img src="pastyears/2022-2.jpg" alt="2022 event photo" />
-        <img src="pastyears/2022-3.jpg" alt="2022 event photo" />
-      </div>
-    </section>
-
-    <footer class="footer">
-      <div class="footer-container">
-        <div class="footer-rows">
-          <div class="footer-col footer-logo-container">
-            <button class="footer-button">
-              <img src="favicon.png" class="footer-logo" />
-            </button>
-          </div>
-          <div class="footer-col">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><a href="https://cybersages.net/"> Home </a></li>
-              <li><a href="https://cybersages.net/about"> About Us </a></li>
-              <li><a href="https://www.roboticsforyouth.org/donations/cybersages/"> Donate </a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4>Contact</h4>
-            <ul>
-              <li><a href="mailto:cybersagesrobotics@gmail.com"> Email Us </a></li>
-              <li><p style="color: white;">571-267-0266</p></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4>Learn More</h4>
-            <ul>
-              <li><a target="_blank" href="https://www.firstinspires.org/"> FIRST's Website </a></li>
-            </ul>
-          </div>
+        <div class="footer-col">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="https://cybersages.net/">Home</a></li>
+            <li><a href="https://cybersages.net/about">About Us</a></li>
+            <li><a href="https://www.roboticsforyouth.org/donations/cybersages/">Donate</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:cybersagesrobotics@gmail.com">Email Us</a></li>
+            <li><p style="color: white;">571-267-0266</p></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Learn More</h4>
+          <ul>
+            <li><a target="_blank" href="https://www.firstinspires.org/">FIRST's Website</a></li>
+          </ul>
         </div>
       </div>
-    </footer>
+    </div>
+  </footer>
 
-    <script src="javascript-files/navbar.js"></script>
-  </body>
+  <script src="javascript-files/navbar.js"></script>
+</body>
 </html>
-
