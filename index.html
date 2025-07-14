@@ -1,133 +1,349 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Cyber Sages</title>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.3.3/platform.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Roboto+Slab:wght@500;700&display=swap" rel="stylesheet">
     <link href="css-files/navbar.css" rel="stylesheet">
     <link href="css-files/footer.css" rel="stylesheet">
-    <link href="css-files/homepage-image.css" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="favicon.png"/>
-      
     <style>
-      body {
-        padding-top: 70px;
-        background: rgb(35, 75, 105); 
-      }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Lato', sans-serif;
+        }
 
-      ::-webkit-scrollbar {
-        width: 12px;
-      }
+        body {
+            padding-top: 80px;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-      ::-webkit-scrollbar-track {
-        background: rgb(35, 75, 105); 
-        margin-block: 5px;
-      }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-      ::-webkit-scrollbar-thumb {
-        background: #D16C00;
-        height: 60px;
-        border-radius: 100vh;
-        margin-top: 70px;
-      }
+        .section {
+            padding: 60px 0;
+            opacity: 0;
+            animation: fadeIn 0.5s ease-out forwards 0.2s;
+        }
 
-      
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .hero-section, .welcome-section, .donate-section {
+            background: linear-gradient(135deg, #EDF2F7 0%, #E2E8F0 100%);
+            text-align: center;
+        }
+
+        .home-page-image-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .home-page-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+            margin-bottom: 20px;
+        }
+
+        .quote {
+            font-family: 'Roboto Slab', serif;
+            font-size: 1.5rem;
+            color: #2D3748;
+            font-weight: 500;
+            font-style: italic;
+            display: block;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .quote::after {
+            content: '— Matt Mullenweg';
+            display: block;
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin-top: 10px;
+        }
+
+        .section-title {
+            font-family: 'Roboto Slab', serif;
+            font-size: 2.8rem;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #2D3748;
+            font-weight: 700;
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 4px;
+            background-color: #2B6CB0;
+            border-radius: 2px;
+        }
+
+        .section-text {
+            font-size: 1.15rem;
+            max-width: 750px;
+            margin: 0 auto;
+            text-align: center;
+            font-weight: 300;
+            color: #4A5568;
+        }
+
+        .donate-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background-color: #FFFFFF;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .donate-text {
+            font-size: 1.4rem;
+            color: #2D3748;
+            font-weight: 500;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .donate-button {
+            display: inline-block;
+            padding: 16px 32px;
+            border-radius: 10px;
+            color: #FFFFFF;
+            font-weight: 700;
+            font-size: 1rem;
+            background-color: #2B6CB0;
+            text-decoration: none;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .donate-button:hover {
+            transform: translateY(-3px);
+            background-color: #1B567D;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #2D3748;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #2B6CB0;
+            border-radius: 5px;
+        }
+
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
+        @media (max-width: 1024px) {
+            .section-title {
+                font-size: 2.4rem;
+            }
+
+            .section-text {
+                font-size: 1.1rem;
+            }
+
+            .home-page-image-container {
+                max-width: 600px;
+            }
+
+            .quote {
+                font-size: 1.3rem;
+            }
+
+            .donate-text {
+                font-size: 1.3rem;
+            }
+
+            .donate-container {
+                max-width: 600px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 50px 0;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .section-text {
+                font-size: 1rem;
+            }
+
+            .home-page-image-container {
+                max-width: 100%;
+            }
+
+            .quote {
+                font-size: 1.2rem;
+            }
+
+            .donate-container {
+                padding: 25px;
+            }
+
+            .donate-button {
+                font-size: 1.1rem;
+                padding: 14px 28px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .section-text {
+                font-size: 0.9rem;
+            }
+
+            .quote {
+                font-size: 1rem;
+            }
+
+            .quote::after {
+                font-size: 0.9rem;
+            }
+
+            .donate-text {
+                font-size: 1.2rem;
+            }
+
+            .donate-button {
+                font-size: 1rem;
+                padding: 12px 24px;
+            }
+        }
+
     </style>
-
-
-  </head>
-  <body>
+</head>
+<body>
     <header>
-      <nav class="navbar">
-        <a class="nav-logo nav-link " href="https://cybersages.net/">
-          <img src="favicon.png" class="logo">
-          <p class="team-number">
-            #23541
-          </p>
-        </a>
-        <ul class="nav-menu">
-          <li class="nav-item"><a href="https://cybersages.net/about" class="nav-link"> About Us </a></li>
-          <li class="nav-item"><a href="https://cybersages.net/aboutFIRST" class="nav-link"> About FIRST </a></li>
-          <li class="nav-item"><a href="https://cybersages.net/contact" class="nav-link"> Contact </a></li>
-          <li class="nav-item"><a href="https://cybersages.net/sponsor" class="nav-link sponsor-btn"> Sponsor Us </a></li>
-        </ul>
-        <div class="hamburger">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </div>
-      </nav>
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <a class="nav-logo nav-link" href="https://cybersages.net/" aria-label="Cyber Sages Home">
+                <img src="images/logo.png" class="logo" alt="Cyber Sages Logo">
+                <p class="team-number">#23541</p>
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="https://cybersages.net/about" class="nav-link">About Us</a></li>
+                <li class="nav-item"><a href="https://cybersages.net/aboutFIRST" class="nav-link">About FIRST</a></li>
+                <li class="nav-item"><a href="https://cybersages.net/contact" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="https://cybersages.net/sponsor" class="sponsor-btn">Sponsor Us</a></li>
+            </ul>
+            <div class="hamburger" aria-label="Toggle navigation menu" role="button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
     </header>
 
-    <div class="home-page-image-container">
-      <img class="home-page-image" src="images/Team-Image.jpg">
-      <span class="quote">"Technology is best when it brings people together" <br> <br> - Matt Mullenweg </span>
-    </div>
+    <main>
+        <section class="hero-section section" aria-labelledby="hero-title">
+            <div class="container">
+                <h2 class="visually-hidden" id="hero-title">Welcome to Cyber Sages</h2>
+                <div class="home-page-image-container">
+                    <img class="home-page-image" src="images/Team-Image.jpg" alt="Cyber Sages Team">
+                    <span class="quote">"Technology is best when it brings people together"</span>
+                </div>
+            </div>
+        </section>
 
-    <div style="background-color: rgb(21, 89, 145); padding-bottom: 20px;">
-      <div class="mission-statement-container">
-        <h1>
-          Welcome
-        </h1>
-        <p> Welcome to the official website of Cyber Sages, where innovation and exploration collide in the world of robotics! Embarking on our second journey, 
-          Cyber Sages is thrilled to introduce you to a passionate group of budding engineers, programmers, and creators. As we take our next bold steps into the 
-          realm of robotics, we invite you to join us on this exciting adventure filled with learning, teamwork, and technological marvels.
-        </p>
-      </div>
-      <div style="display: flex; justify-content: center;">
-        <div class="learn-more-container">
-          <p class="learn-more">
-          If you would like to donate, please visit our Contact page. 
-          </p>
-          <div class="learn-more-button-container">
-            <a class="learn-more-button" href="https://www.cybersages.net/contact">
-              Sponsor Us
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
+        <section class="welcome-section section" aria-labelledby="welcome-title">
+            <div class="container">
+                <h2 class="section-title" id="welcome-title">Welcome</h2>
+                <p class="section-text">
+                    Welcome to the official website of Cyber Sages, where innovation and exploration collide in the world of robotics! Embarking on our second journey, Cyber Sages is thrilled to introduce you to a passionate group of budding engineers, programmers, and creators. As we take our next bold steps into the realm of robotics, we invite you to join us on this exciting adventure filled with learning, teamwork, and technological marvels.
+                </p>
+            </div>
+        </section>
 
-    <footer class="footer">
-      <div class="footer-container">
-        <div class="footer-rows">
-          <div class="footer-col footer-logo-container">
-            <button class="footer-button">
-              <img src="favicon.png" class="footer-logo">
-            </button>
-          </div>
-          <div class="footer-col">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><a href="https://cybersages.net/"> Home </a></li>
-              <li><a href="https://cybersages.net/about"> About Us </a></li>
-              <li><a href="https://www.roboticsforyouth.org/donations/cybersages/"> Donate </a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4> Contact </h4>
-            <ul>
-              <li><a href="mailto: cybersagesrobotics@gmail.com"> Email Us </a></li>
-              <li><p href="#" style="color: white;"> 571-267-0266 </p></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4> Learn More </h4>
-            <ul>
-              <li><a target="_blank" href="https://www.firstinspires.org/"> FIRST's Website </a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
+        <section class="donate-section section" aria-labelledby="donate-title">
+            <div class="container">
+                <h2 class="section-title" id="donate-title">Support Our Mission</h2>
+                <div class="donate-container">
+                    <p class="donate-text">Join our mission by sponsoring Cyber Sages today!</p>
+                    <a class="donate-button" href="https://www.roboticsforyouth.org/donations/cybersages/" target="_blank" rel="noopener">Donate Now</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-rows">
+                <div class="footer-col footer-logo-container">
+                    <button class="footer-button" aria-label="Cyber Sages Logo">
+                        <img src="favicon.png" class="footer-logo" alt="Cyber Sages Footer Logo">
+                    </button>
+                </div>
+                <div class="footer-col">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><a href="https://cybersages.net/">Home</a></li>
+                        <li><a href="https://cybersages.net/about">About Us</a></li>
+                        <li><a href="https://www.roboticsforyouth.org/donations/cybersages/">Donate</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><a href="mailto:cybersagesrobotics@gmail.com">Email Us</a></li>
+                        <li><p>571-267-0266</p></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Learn More</h4>
+                    <ul>
+                        <li><a target="_blank" href="https://www.firstinspires.org/" rel="noopener">FIRST's Website</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>  
     </footer>
     <script src="javascript-files/navbar.js"></script>
     <script src="javascript-files/typewriter.js"></script>
-  </body>
+</body>
 </html>
-
-
-<!--Hello Guys sunmay is not ok-->
