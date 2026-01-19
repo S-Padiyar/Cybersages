@@ -1,393 +1,561 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Cyber Sages</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Roboto+Slab:wght@500;700&display=swap" rel="stylesheet">
-    <link href="css-files/navbar.css" rel="stylesheet">
-    <link href="css-files/footer.css" rel="stylesheet">
-    <link rel="shortcut icon" type="image/png" href="favicon.png"/>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Lato', sans-serif;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cyber Sages Robotics</title>
+<link rel="icon" type="image/png" href="favicon.png">
 
-        body {
-            padding-top: 80px;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto+Slab:wght@500;700;800&display=swap" rel="stylesheet">
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+<style>
+:root {
+    --bg: #070b16;
+    --surface: #0b1224;
+    --surface-soft: #0f1a36;
+    --text: #ffffff;
+    --muted: rgba(255,255,255,0.68);
+    --line: rgba(255,255,255,0.11);
+    --accent: #3b82f6;
+    --accent-hover: #60a5fa;
+    --radius: 16px;
+    --shadow: 0 20px 60px rgba(0,0,0,0.48);
+    --transition: 0.28s ease;
+}
 
-        .section {
-            padding: 60px 0;
-            opacity: 0;
-            animation: fadeIn 0.5s ease-out forwards 0.2s;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-            }
-        }
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.68;
+    min-height: 100vh;
+}
 
-        .members-info, .past-years-info {
-            background-color: #EDF2F7;
-        }
+a { color: inherit; text-decoration: none; }
 
-        .about-us-info, .group-photo-container {
-            background: linear-gradient(135deg, #EDF2F7 0%, #E2E8F0 100%);
-        }
+.container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 24px;
+    width: 100%;
+}
 
-        .members-title, .about-us-title, .past-years-title {
-            font-family: 'Roboto Slab', serif;
-            font-size: 2.8rem;
-            text-align: center;
-            margin-bottom: 40px;
-            color: #2D3748;
-            font-weight: 700;
-            position: relative;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+}
 
-        .members-title::after, .about-us-title::after, .past-years-title::after {
-            content: '';
-            position: absolute;
-            bottom: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50px;
-            height: 4px;
-            background-color: #2B6CB0;
-            border-radius: 2px;
-        }
+.nav {
+    height: 80px;
+    background: rgba(7,11,22,0.88);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--line);
+}
 
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            justify-content: center;
-        }
+.nav-inner {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
 
-        .grid-item {
-            background-color: #FFFFFF;
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-shrink: 0;
+}
 
-        .grid-item:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-        }
+.nav-left:hover {
+    transform: scale(1.05);
+    transition: var(--transition);
+}
 
-        .grid-item img {
-            max-width: 160px;
-            width: 100%;
-            height: auto;
-            border-radius: 50%;
-            border: 3px solid #2B6CB0;
-            margin-bottom: 15px;
-            loading: lazy;
-        }
+.nav-logo {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+    background: transparent !important;
+}
 
-        .grid-item p {
-            font-size: 1.2rem;
-            font-weight: 400;
-            color: #2D3748;
-        }
+.team-number {
+    font-weight: 700;
+    font-size: 2rem;
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
 
-        .group-photo-wrapper {
-            max-width: 900px;
-            margin: 0 auto;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-        }
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-shrink: 0;
+}
 
-        .group-photo {
-            width: 100%;
-            height: auto;
-            display: block;
-            loading: lazy;
-        }
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+}
 
-        .about-us-info-text {
-            font-size: 1.15rem;
-            max-width: 750px;
-            margin: 0 auto;
-            text-align: center;
-            font-weight: 300;
-            color: #4A5568;
-        }
+.nav-links li { display: flex; align-items: center; }
 
-        .past-years-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            justify-content: center;
-        }
+.nav-links a {
+    font-weight: 500;
+    color: var(--muted);
+    transition: var(--transition);
+    position: relative;
+    white-space: nowrap;
+}
 
-        .past-year-card {
-            background-color: #FFFFFF;
-            border-radius: 10px;
-            padding: 25px;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+.nav-links a:hover { color: var(--text); }
 
-        .past-year-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-        }
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -6px;
+    left: 0;
+    background: var(--accent);
+    transition: width 0.3s ease;
+}
 
-        .past-year-card h3 {
-            font-family: 'Roboto Slab', serif;
-            font-size: 1.4rem;
-            margin-bottom: 12px;
-            color: #2D3748;
-            font-weight: 600;
-        }
+.nav-links a:hover::after { width: 100%; }
 
-        .past-year-card p {
-            font-size: 1.1rem;
-            color: #4A5568;
-            font-weight: 300;
-        }
+.sponsor-btn {
+    padding: 10px 24px;
+    border-radius: 12px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+    color: white;
+    font-weight: 700;
+    box-shadow: 0 8px 24px rgba(59,130,246,0.3);
+    transition: var(--transition);
+}
 
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
+.sponsor-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 36px rgba(59,130,246,0.45);
+}
 
-        ::-webkit-scrollbar-track {
-            background: #2D3748;
-        }
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
 
-        ::-webkit-scrollbar-thumb {
-            background: #2B6CB0;
-            border-radius: 5px;
-        }
+.hamburger span {
+    width: 28px;
+    height: 2.5px;
+    background: var(--text);
+    border-radius: 2px;
+    transition: var(--transition);
+}
 
-        .visually-hidden {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            border: 0;
-        }
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 80px; left: 0; right: 0;
+    background: var(--surface);
+    border-bottom: 1px solid var(--line);
+    padding: 0;
+    text-align: center;
+}
 
-        @media (max-width: 1024px) {
-            .members-title, .about-us-title, .past-years-title {
-                font-size: 2.4rem;
-            }
+.mobile-menu a {
+    display: block;
+    padding: 14px 0;
+    font-weight: 500;
+    color: var(--muted);
+    border-top: 1px solid var(--line);
+    margin: 0;
+    white-space: nowrap;
+}
 
-            .grid-item img {
-                max-width: 140px;
-            }
+.mobile-menu a:first-child { border-top: none; }
+.mobile-menu a:last-child { border-bottom: none; }
 
-            .about-us-info-text {
-                font-size: 1.1rem;
-            }
-        }
+.mobile-menu a:hover {
+    color: var(--text);
+    background: rgba(255,255,255,0.04);
+}
 
-        @media (max-width: 768px) {
-            .section {
-                padding: 50px 0;
-            }
+/* HERO */
+.hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+}
 
-            .grid-container {
-                grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-                gap: 25px;
-            }
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("images/Team-Image.jpg") center/cover no-repeat;
+    filter: brightness(0.52) contrast(1.08);
+}
 
-            .grid-item img {
-                max-width: 120px;
-            }
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(7,11,22,0.15), rgba(7,11,22,0.85) 70%);
+}
 
-            .past-years-grid {
-                grid-template-columns: 1fr;
-            }
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 920px;
+    width: 100%;
+}
 
-            .members-title, .about-us-title, .past-years-title {
-                font-size: 2rem;
-            }
-        }
+.hero h1 {
+    font-family: 'Roboto Slab', serif;
+    font-size: clamp(3.8rem, 9vw, 7.2rem);
+    font-weight: 800;
+    line-height: 1.05;
+    margin-bottom: 1.2rem;
+    text-shadow: 0 6px 32px rgba(0,0,0,0.75);
+}
 
-        @media (max-width: 480px) {
-            .grid-item img {
-                max-width: 100px;
-            }
+.hero .quote {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 0.15em solid var(--accent);
+    font-size: clamp(1.4rem, 4vw, 2rem);
+    font-weight: 400;
+    color: var(--muted);
+    max-width: 780px;
+    margin: 0 auto 1.5rem;
+    font-style: italic;
+    text-shadow: 0 3px 16px rgba(0,0,0,0.6);
+}
 
-            .grid-item p, .past-year-card p {
-                font-size: 1rem;
-            }
+.hero .quote::after {
+    content: "— Matt Mullenweg";
+    display: block;
+    font-size: 0.9em;
+    font-style: normal;
+    opacity: 0.8;
+    margin-top: 0.8rem;
+}
 
-            .group-photo-wrapper {
-                max-width: 100%;
-            }
+/* SECTIONS */
+.section {
+    padding: 68px 0 100px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+    text-align: center;
+}
 
-            .members-title, .about-us-title, .past-years-title {
-                font-size: 1.8rem;
-            }
-        }
-    </style>
+.section.visible {
+    opacity: 1;
+    transform: none;
+}
+
+.section-alt {
+    background: var(--surface-soft);
+}
+
+.section-title, .members-title, .about-us-title, .past-years-title {
+    font-family: 'Roboto Slab', serif;
+    font-size: clamp(2.4rem, 5vw, 3.4rem);
+    font-weight: 700;
+    margin-bottom: 2.5rem;
+    color: var(--text);
+}
+
+.card, .grid-item, .past-year-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 64px 40px;
+    box-shadow: var(--shadow);
+    max-width: 860px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.grid-container, .past-years-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+.grid-item img {
+    max-width: 160px;
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    border: 3px solid var(--accent);
+    margin-bottom: 15px;
+}
+
+.grid-item p, .past-year-card p {
+    font-size: 1.2rem;
+    color: var(--muted);
+}
+
+.group-photo-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.group-photo {
+    width: 100%;
+    height: auto;
+}
+
+.about-us-info-text {
+    font-size: 1.15rem;
+    max-width: 750px;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 300;
+    color: var(--muted);
+}
+
+/* FOOTER */
+footer {
+    background: #05080f;
+    border-top: 1px solid var(--line);
+    padding: 100px 0 80px;
+    text-align: center;
+}
+
+/* RESPONSIVE */
+@media (max-width: 960px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+}
+
+@media (max-width: 680px) {
+    .section { padding: 100px 0 70px; }
+    .card { padding: 48px 24px; }
+}
+
+@media (max-width: 480px) {
+    .nav { height: 70px; }
+    .nav-inner { height: 70px; }
+}
+</style>
 </head>
 <body>
-    <header>
-        <nav class="navbar" role="navigation" aria-label="Main navigation">
-            <a class="nav-logo nav-link" href="https://cybersages.net/" aria-label="Cyber Sages Home">
-                <img src="images/logo.png" class="logo" alt="Cyber Sages Logo">
-                <p class="team-number">#23541</p>
+
+<header>
+    <nav class="nav">
+        <div class="container nav-inner">
+            <a href="https://cybersages.net/" class="nav-left">
+                <img src="images/logo.png" class="nav-logo" alt="Cyber Sages Logo">
+                <span class="team-number">#23541</span>
             </a>
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="https://cybersages.net/about" class="nav-link">About Us</a></li>
-                <li class="nav-item"><a href="https://cybersages.net/aboutFIRST" class="nav-link">About FIRST</a></li>
-                <li class="nav-item"><a href="https://cybersages.net/contact" class="nav-link">Contact</a></li>
-                <li class="nav-item"><a href="https://cybersages.net/sponsor" class="sponsor-btn">Sponsor Us</a></li>
-            </ul>
-            <div class="hamburger" aria-label="Toggle navigation menu" role="button">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
-    </header>
 
-    <main>
-        <section class="members-info section" aria-labelledby="members-title">
-            <div class="container">
-                <h2 class="members-title" id="members-title">Our Team</h2>
-                <div class="grid-container">
-                    <div class="grid-item">
-                        <img src="images/Team-Photos/Sahil.jpg" alt="Sahil Aggarwal, Captain">
-                        <p>Sahil Aggarwal</p>
-                    </div>
-                    <div class="grid-item">
-                        <img src="images/Team-Photos/Sunmay.jpg" alt="Sunmay Padiyar, Captain">
-                        <p>Sunmay Padiyar</p>
-                    </div>
-                    <div class="grid-item">
-                        <img src="images/Team-Photos/Kavin.jpg" alt="Kavin Wesley, Lead Programmer">
-                        <p>Kavin Wesley</p>
-                    </div>
-                    <div class="grid-item">
-                        <img src="images/Team-Photos/Arihant.jpg" alt="Arihant Shanmugam, Team Member">
-                        <p>Arihant Shanmugam</p>
-                    </div>
-                    <!-- <div class="grid-item">
-                        <img src="images/Team-Photos/#jpg" alt="Aditya Shah, Team Member">
-                        <p>Aditya Shah</p>
-                    </div> -->
-                    <div class="grid-item">
-                        <img src="images/Team-Photos/Ishir.jpg" alt="Ishir Aggarwal, Team Member">
-                        <p>Ishir Aggarwal</p>
-                    </div>
-                    <div class="grid-item">
-                        <img src="images/Team-Photos/Sanvith.jpg" alt="Sanvith Manukonda, Team Member">
-                        <p>Sanvith Manukonda</p>
-                    </div>
-                    <div class="grid-item">
-                        <img src="images/Team-Photos/Madhav.jpg" alt="Madhav Jhunjhunwala, Team Member">
-                        <p>Madhav Jhunjhunwala</p>
-                    </div>
-                    <div class="grid-item">
-                        <img src="images/Team-Photos/Darin.jpg" alt="Darin Arun, Team Member">
-                        <p>Darin Arun</p>
-                    </div>
-                    <div class="grid-item">
-                        <img src="images/Team-Photos/Sai.jpg" alt="Sai Raghavendran, Team Member">
-                        <p>Sai Raghavendran</p>
-                    </div>
-                    
-                </div>
-            </div>
-        </section>
-
-        <section class="group-photo-container section" aria-labelledby="group-photo-title">
-            <div class="container">
-                <h2 class="visually-hidden" id="group-photo-title">Team Group Photo</h2>
-                <div class="group-photo-wrapper">
-                    <img src="images/group.jpg" class="group-photo" alt="Cyber Sages Team Group Photo">
-                </div>
-            </div>
-        </section>
-
-        <section class="about-us-info section" aria-labelledby="about-us-title">
-            <div class="container">
-                <h2 class="about-us-title" id="about-us-title">About Us</h2>
-                <p class="about-us-info-text">
-                    Cyber Sages is a dedicated robotics team in our second year of the FIRST Tech Challenge (FTC). Comprised of talented sophomore and junior students, we are driven by a passion for innovation and technology. Our diverse skills and collaborative spirit propel us to achieve excellence in robotics, fostering creativity and technical proficiency.
-                </p>
-            </div>
-        </section>
-
-        <section class="past-years-info section" aria-labelledby="past-years-title">
-            <div class="container">
-                <h2 class="past-years-title" id="past-years-title">Past Achievements</h2>
-                <div class="past-years-grid">
-                    <article class="past-year-card">
-                        <h3>2023-2024 Season</h3>
-                        <p>Competed in the FTC Regional Qualifiers, earning a top 10 finish and the Rookie Team Award for outstanding performance.</p>
-                    </article>
-                    <article class="past-year-card">
-                        <h3>2022-2023 Season</h3>
-                        <p>Founded Cyber Sages, debuted in our first FTC season, and engineered our initial robot, 'SageBot,' with a focus on teamwork and innovation.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer" role="contentinfo">
-        <div class="footer-container">
-            <div class="footer-rows">
-                <div class="footer-col footer-logo-container">
-                    <button class="footer-button" aria-label="Cyber Sages Logo">
-                        <img src="favicon.png" class="footer-logo" alt="Cyber Sages Footer Logo">
-                    </button>
-                </div>
-                <div class="footer-col">
-                    <h4>Useful Links</h4>
-                    <ul>
-                        <li><a href="https://cybersages.net/">Home</a></li>
-                        <li><a href="https://cybersages.net/about">About Us</a></li>
-                        <li><a href="https://drive.google.com/file/d/1NMDiQMQuErI1Gu8TnqWMJtR-8S6rnB_N/view?usp=sharing">Donate</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact Us</h4>
-                    <ul>
-                        <li><a href="mailto:cybersagesrobotics@gmail.com">Email Us</a></li>
-                        <li><p>571-267-0266</p></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Learn More</h4>
-                    <ul>
-                        <li><a target="_blank" href="https://www.firstinspires.org/" rel="noopener">FIRST's Website</a></li>
-                    </ul>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="https://cybersages.net/about"> Past Years</a></li>
+                    <li><a href="https://cybersages.net/aboutFIRST"> Learn </a></li>
+                    <li><a href="https://cybersages.net/contact"> Outreach </a></li>
+                    <li><a href="https://cybersages.net/sponsor" class="sponsor-btn"> Sponsor Us </a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
             </div>
         </div>
-    </footer>
-    <script src="javascript-files/navbar.js"></script>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="https://cybersages.net/about">About Us</a>
+            <a href="https://cybersages.net/aboutFIRST">About FIRST</a>
+            <a href="https://cybersages.net/contact">Contact</a>
+            <a href="https://cybersages.net/sponsor">Sponsor Us</a>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Cyber Sages Robotics</h1>
+            <p class="quote">Technology is best when it brings people together. </p>
+        </div>
+    </section>
+
+    <!-- WELCOME -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Welcome</h2>
+            <div class="card">
+                <p class="section-text">
+                    Welcome to the official website of Cyber Sages, where innovation and exploration collide in the world of robotics! Embarking on our second journey, Cyber Sages is thrilled to introduce you to a passionate group of budding engineers, programmers, and creators. As we take our next bold steps into the realm of robotics, we invite you to join us on this exciting adventure filled with learning, teamwork, and technological marvels.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SUPPORT OUR MISSION -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Support Our Mission</h2>
+            <div class="card">
+                <p class="donate-text">Join our mission by sponsoring Cyber Sages today!</p>
+                <a href="https://drive.google.com/file/d/1NMDiQMQuErI1Gu8TnqWMJtR-8S6rnB_N/view?usp=sharing" target="_blank" rel="noopener" class="donate-button">Donate Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR TEAM -->
+    <section class="members-info section" aria-labelledby="members-title">
+        <div class="container">
+            <h2 class="members-title" id="members-title">Our Team</h2>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <img src="images/Team-Photos/Sahil.jpg" alt="Sahil Aggarwal, Captain">
+                    <p>Sahil Aggarwal</p>
+                </div>
+                <div class="grid-item">
+                    <img src="images/Team-Photos/Sunmay.jpg" alt="Sunmay Padiyar, Captain">
+                    <p>Sunmay Padiyar</p>
+                </div>
+                <div class="grid-item">
+                    <img src="images/Team-Photos/Kavin.jpg" alt="Kavin Wesley, Lead Programmer">
+                    <p>Kavin Wesley</p>
+                </div>
+                <div class="grid-item">
+                    <img src="images/Team-Photos/Arihant.jpg" alt="Arihant Shanmugam, Team Member">
+                    <p>Arihant Shanmugam</p>
+                </div>
+                <div class="grid-item">
+                    <img src="images/Team-Photos/Ishir.jpg" alt="Ishir Aggarwal, Team Member">
+                    <p>Ishir Aggarwal</p>
+                </div>
+                <div class="grid-item">
+                    <img src="images/Team-Photos/Sanvith.jpg" alt="Sanvith Manukonda, Team Member">
+                    <p>Sanvith Manukonda</p>
+                </div>
+                <div class="grid-item">
+                    <img src="images/Team-Photos/Madhav.jpg" alt="Madhav Jhunjhunwala, Team Member">
+                    <p>Madhav Jhunjhunwala</p>
+                </div>
+                <div class="grid-item">
+                    <img src="images/Team-Photos/Darin.jpg" alt="Darin Arun, Team Member">
+                    <p>Darin Arun</p>
+                </div>
+                <div class="grid-item">
+                    <img src="images/Team-Photos/Sai.jpg" alt="Sai Raghavendran, Team Member">
+                    <p>Sai Raghavendran</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GROUP PHOTO -->
+    <section class="group-photo-container section">
+        <div class="container">
+            <div class="group-photo-wrapper">
+                <img src="images/group.jpg" class="group-photo" alt="Cyber Sages Team Group Photo">
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT US -->
+    <section class="about-us-info section">
+        <div class="container">
+            <h2 class="about-us-title">About Us</h2>
+            <p class="about-us-info-text">
+                Cyber Sages is a dedicated robotics team in our second year of the FIRST Tech Challenge (FTC). Comprised of talented sophomore and junior students, we are driven by a passion for innovation and technology. Our diverse skills and collaborative spirit propel us to achieve excellence in robotics, fostering creativity and technical proficiency.
+            </p>
+        </div>
+    </section>
+
+    <!-- PAST ACHIEVEMENTS -->
+    <section class="past-years-info section">
+        <div class="container">
+            <h2 class="past-years-title">Past Achievements</h2>
+            <div class="past-years-grid">
+                <article class="past-year-card">
+                    <h3>2023-2024 Season</h3>
+                    <p>Competed in the FTC Regional Qualifiers, earning a top 10 finish and the Rookie Team Award for outstanding performance.</p>
+                </article>
+                <article class="past-year-card">
+                    <h3>2022-2023 Season</h3>
+                    <p>Founded Cyber Sages, debuted in our first FTC season, and engineered our initial robot, 'SageBot,' with a focus on teamwork and innovation.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-grid">
+        <div class="footer-col">
+            <img src="favicon.png" class="footer-logo" alt="Cyber Sages Logo">
+        </div>
+        <div class="footer-col">
+            <h4>Useful Links</h4>
+            <a href="https://cybersages.net/">Home</a>
+            <a href="https://cybersages.net/about">About Us</a>
+            <a href="https://drive.google.com/file/d/1NMDiQMQuErI1Gu8TnqWMJtR-8S6rnB_N/view?usp=sharing">Donate</a>
+        </div>
+        <div class="footer-col">
+            <h4>Contact Us</h4>
+            <a href="mailto:cybersagesrobotics@gmail.com">cybersagesrobotics@gmail.com</a>
+            <p>571-267-0266</p>
+        </div>
+        <div class="footer-col">
+            <h4>Learn More</h4>
+            <a href="https://www.firstinspires.org/" target="_blank" rel="noopener">FIRST's Website</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+// Mobile menu toggle
+const hamburger = document.getElementById("hamburger");
+const mobileMenu = document.getElementById("mobileMenu");
+hamburger.onclick = () => {
+    mobileMenu.style.display = mobileMenu.style.display === "block" ? "none" : "block";
+};
+
+// Scroll reveal
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("visible");
+    });
+}, { threshold: 0.18 });
+
+document.querySelectorAll(".section").forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
