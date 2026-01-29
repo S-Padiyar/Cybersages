@@ -37,7 +37,7 @@
     }
 
     a{ color:inherit; text-decoration:none; }
-    img{ display:block; max-width:100%; }
+    img{ display:block; max-width:100%; height:auto; }
 
     .container{ max-width:1240px; margin:0 auto; padding:0 24px; width:100%; }
 
@@ -64,8 +64,10 @@
       align-items:center;
       gap:16px;
       flex-shrink:0;
+      transition:transform var(--transition);
+      will-change:transform;
     }
-    .nav-left:hover{ transform:scale(1.05); transition:var(--transition); }
+    .nav-left:hover{ transform:scale(1.05); }
 
     .nav-logo{
       width:65px;
@@ -299,7 +301,7 @@
       line-height:1.5;
     }
 
-    /* MENTORSHIP TEAMS GRID (logos/photos + optional website link) */
+    /* MENTORSHIP TEAMS GRID */
     .team-mentor-grid{
       display:grid;
       grid-template-columns:repeat(3, minmax(0, 1fr));
@@ -322,12 +324,20 @@
       background:rgba(15,26,54,0.22);
     }
 
-    .team-mentor .banner{
+    .team-mentor .banner-wrap{
+      position:relative;
       width:100%;
       aspect-ratio: 16 / 9;
-      object-fit:cover;
+      overflow:hidden;
       border-bottom:1px solid rgba(255,255,255,0.10);
       background:rgba(255,255,255,0.02);
+    }
+    .team-mentor .banner{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
     }
 
     .team-mentor .body{
@@ -342,6 +352,7 @@
       margin-bottom:10px;
     }
 
+    /* Default logo styling (FTC teams with logos) */
     .team-mentor .logo{
       width:54px;
       height:54px;
@@ -351,6 +362,31 @@
       background:rgba(11,18,36,0.6);
       padding:6px;
       flex-shrink:0;
+    }
+
+    /* FLL fallback badge (no logo file needed) */
+    .team-mentor .logo-badge{
+      width:54px;
+      height:54px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,0.12);
+      background:
+        radial-gradient(60px 60px at 30% 30%, rgba(96,165,250,0.18), transparent 60%),
+        rgba(11,18,36,0.6);
+      display:grid;
+      place-items:center;
+      flex-shrink:0;
+      font-weight:900;
+      letter-spacing:0.6px;
+      color:rgba(255,255,255,0.92);
+      box-shadow:0 12px 28px rgba(0,0,0,0.35);
+    }
+    .team-mentor .logo-badge span{
+      font-size:0.92rem;
+      background:linear-gradient(90deg,var(--accent),var(--accent-hover));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      color:transparent;
     }
 
     .team-mentor .name{
@@ -394,19 +430,30 @@
 
     .team-mentor:hover .site::after{ width:100%; }
 
+    /* Make non-link team cards look identical but not clickable */
+    .team-mentor.static{
+      cursor:default;
+    }
+    .team-mentor.static .site{
+      color:rgba(255,255,255,0.70);
+      font-weight:800;
+    }
+    .team-mentor.static .site::after{ display:none; }
+
     /* CAROUSEL */
     .carousel{ position:relative; max-width:980px; margin:0 auto; }
     .carousel-frame{
+      position:relative;
       border-radius:var(--radius);
       overflow:hidden;
       border:1px solid var(--line);
       box-shadow:0 18px 60px rgba(0,0,0,0.42);
       background:rgba(11,18,36,0.72);
       aspect-ratio:16 / 9;
-      display:grid;
-      place-items:center;
     }
     .carousel-slide{
+      position:absolute;
+      inset:0;
       width:100%;
       height:100%;
       object-fit:cover;
@@ -480,11 +527,20 @@
       box-shadow:0 20px 58px rgba(0,0,0,0.46);
       background:rgba(15,26,54,0.24);
     }
-    .flyer-thumb{
+    .flyer-thumb-wrap{
+      position:relative;
       width:100%;
       aspect-ratio:16 / 10;
-      object-fit:cover;
+      overflow:hidden;
       border-bottom:1px solid rgba(255,255,255,0.10);
+      background:rgba(255,255,255,0.02);
+    }
+    .flyer-thumb{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
     }
     .flyer-body{ padding:16px; }
     .flyer-title{
@@ -542,6 +598,139 @@
       line-height:1.55;
     }
 
+    /* CONTACT */
+    .contact-shell{
+      max-width:980px;
+      margin:0 auto;
+      background:rgba(11,18,36,0.70);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:34px;
+      box-shadow:var(--shadow);
+      text-align:left;
+    }
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:1.1fr 0.9fr;
+      gap:18px;
+      align-items:start;
+    }
+
+    .contact-form{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+
+    .form-row{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+
+    .form-group{ display:flex; flex-direction:column; gap:8px; }
+
+    .form-group label{
+      font-size:0.98rem;
+      color:rgba(255,255,255,0.92);
+      font-weight:800;
+      letter-spacing:0.2px;
+    }
+
+    .form-group input,
+    .form-group textarea{
+      padding:12px 12px;
+      font-size:1rem;
+      color:rgba(255,255,255,0.92);
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.12);
+      border-radius:12px;
+      transition:border-color var(--transition), box-shadow var(--transition), background var(--transition);
+      outline:none;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder{ color:rgba(255,255,255,0.45); }
+
+    .form-group input:focus,
+    .form-group textarea:focus{
+      border-color:rgba(96,165,250,0.55);
+      box-shadow:0 0 0 4px rgba(59,130,246,0.18);
+      background:rgba(15,26,54,0.35);
+    }
+
+    .form-group textarea{
+      resize:vertical;
+      min-height:150px;
+    }
+
+    .contact-actions{
+      display:flex;
+      align-items:center;
+      justify-content:flex-start;
+      gap:12px;
+      margin-top:4px;
+    }
+
+    .primary-btn{
+      padding:12px 18px;
+      border-radius:12px;
+      background:linear-gradient(90deg,var(--accent),var(--accent-hover));
+      color:white;
+      font-weight:900;
+      border:none;
+      cursor:pointer;
+      transition:transform var(--transition), box-shadow var(--transition);
+      box-shadow:0 10px 28px rgba(59,130,246,0.28);
+    }
+    .primary-btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 16px 38px rgba(59,130,246,0.42);
+    }
+
+    .contact-side{
+      border:1px solid rgba(255,255,255,0.10);
+      border-radius:var(--radius);
+      background:rgba(255,255,255,0.02);
+      padding:16px;
+    }
+    .contact-side h3{
+      font-family:'Roboto Slab', serif;
+      font-size:1.25rem;
+      margin-bottom:10px;
+    }
+    .contact-side p{
+      color:var(--muted);
+      font-weight:600;
+      line-height:1.65;
+      margin-bottom:12px;
+    }
+
+    .contact-pill{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      padding:12px;
+      border:1px solid rgba(255,255,255,0.10);
+      border-radius:14px;
+      background:rgba(11,18,36,0.55);
+      margin-top:10px;
+    }
+    .contact-pill .k{
+      color:rgba(255,255,255,0.85);
+      font-weight:900;
+      font-size:0.95rem;
+    }
+    .contact-pill .v{
+      color:rgba(96,165,250,0.92);
+      font-weight:900;
+      font-size:0.95rem;
+      text-align:right;
+      word-break:break-word;
+    }
+
     /* FOOTER */
     footer{
       background:#05080f;
@@ -569,11 +758,13 @@
       .team-mentor-grid{ grid-template-columns:repeat(2, minmax(0, 1fr)); }
       .flyer-grid{ grid-template-columns:repeat(2, minmax(0, 1fr)); }
       .people-grid{ grid-template-columns:repeat(2, minmax(0, 1fr)); }
+      .contact-grid{ grid-template-columns:1fr; }
     }
     @media (max-width:960px){
       .nav-links{ display:none; }
       .hamburger{ display:flex; }
       .footer-grid{ grid-template-columns:repeat(2, 1fr); }
+      .form-row{ grid-template-columns:1fr; }
     }
     @media (max-width:680px){
       .container{ padding:0 20px; }
@@ -583,6 +774,7 @@
       .team-mentor-grid{ grid-template-columns:1fr; }
       .flyer-grid{ grid-template-columns:1fr; }
       .people-grid{ grid-template-columns:1fr; }
+      .contact-shell{ padding:22px; }
     }
     @media (max-width:480px){
       .nav{ height:70px; }
@@ -647,22 +839,22 @@
       <div class="card">
         <div class="stats-grid">
           <div class="stat">
-            <div class="num">00</div>
+            <div class="num">1,000+</div>
             <div class="label">Students Reached</div>
             <div class="sub">Workshops, demos, and school events</div>
           </div>
           <div class="stat">
-            <div class="num">00</div>
+            <div class="num">04</div>
             <div class="label">Teams Mentored</div>
             <div class="sub">FTC and FLL support across the season</div>
           </div>
           <div class="stat">
-            <div class="num">00</div>
+            <div class="num">25+</div>
             <div class="label">Events Hosted</div>
             <div class="sub">Scrimmages, CAD sessions, and talks</div>
           </div>
           <div class="stat">
-            <div class="num">00</div>
+            <div class="num">1,500+</div>
             <div class="label">Volunteer Hours</div>
             <div class="sub">Documented team service hours</div>
           </div>
@@ -681,64 +873,63 @@
 
       <div class="card">
         <div class="team-mentor-grid">
-          <!-- TEAM CARD 1 -->
-          <a class="team-mentor" href="TEAM_WEBSITE_LINK_1" target="_blank" rel="noopener">
-            <img class="banner" src="mentored-teams/team-1-banner.jpg" alt="Team 1 mentoring photo" loading="lazy">
-            <div class="body">
-              <div class="top-row">
-                <img class="logo" src="mentored-teams/team-1-logo.png" alt="Team 1 logo" loading="lazy">
-                <div>
-                  <div class="name">Team Name 1</div>
-                  <div class="meta">FTC ###### · Location</div>
-                </div>
-              </div>
-              <div class="desc">
-                Short description of what you helped with: drivetrain tuning, autonomous setup, CAD feedback, scrimmage prep, etc.
-              </div>
-              <span class="site">Visit team website</span>
+          <!-- TEAM CARD 1 (FLL - no logo, no website) -->
+          <div class="team-mentor static" role="group" aria-label="FalconX team card">
+            <div class="banner-wrap">
+              <img class="banner" src="images/M1.jpg" alt="FalconX mentoring photo" loading="lazy">
             </div>
-          </a>
-
-          <!-- TEAM CARD 2 -->
-          <a class="team-mentor" href="TEAM_WEBSITE_LINK_2" target="_blank" rel="noopener">
-            <img class="banner" src="mentored-teams/team-2-banner.jpg" alt="Team 2 mentoring photo" loading="lazy">
             <div class="body">
               <div class="top-row">
-                <img class="logo" src="mentored-teams/team-2-logo.png" alt="Team 2 logo" loading="lazy">
+                <div class="logo-badge" aria-hidden="true"><span>FLL</span></div>
                 <div>
-                  <div class="name">Team Name 2</div>
-                  <div class="meta">FLL / FTC · Location</div>
+                  <div class="name">FalconX</div>
+                  <div class="meta">FLL · Ashburn, VA</div>
                 </div>
               </div>
               <div class="desc">
-                Short description of what you helped with: outreach planning, robot wiring, opmode structure, driver practice, etc.
-              </div>
-              <span class="site">Visit team website</span>
+                We worked with FalconX during practices to help them choose which missions to focus on and build a robot that could do them reliably. A lot of our time was spent testing, fixing small things that kept breaking, and helping them figure out a practice routine that actually made them better each week. We also gave feedback on their project and presentation so they felt more confident talking to judges.              </div>
+              <span class="site">No team website available</span>
             </div>
-          </a>
+          </div>
 
-          <!-- TEAM CARD 3 -->
-          <a class="team-mentor" href="TEAM_WEBSITE_LINK_3" target="_blank" rel="noopener">
-            <img class="banner" src="mentored-teams/team-3-banner.jpg" alt="Team 3 mentoring photo" loading="lazy">
+          <!-- TEAM CARD 2 (FLL - no logo, no website) -->
+          <div class="team-mentor static" role="group" aria-label="MasterMinds team card">
+            <div class="banner-wrap">
+              <img class="banner" src="images/M3.jpeg" alt="MasterMinds mentoring photo" loading="lazy">
+            </div>
             <div class="body">
               <div class="top-row">
-                <img class="logo" src="mentored-teams/team-3-logo.png" alt="Team 3 logo" loading="lazy">
+                <div class="logo-badge" aria-hidden="true"><span>FLL</span></div>
                 <div>
-                  <div class="name">Team Name 3</div>
-                  <div class="meta">FTC ###### · Location</div>
+                  <div class="name">MasterMinds</div>
+                  <div class="meta">FLL · Ashburn</div>
                 </div>
               </div>
               <div class="desc">
-                Short description of what you helped with: mechanism iteration, CAD assembly checks, programming debugging, etc.
+            With MasterMinds, we mostly helped during build and practice sessions by catching wiring and build issues early and making the robot more consistent. We talked through mission strategy with them, then helped them test changes instead of guessing. We also helped them polish their presentation and outreach ideas so they were ready for competition.              </div>
+              <span class="site">No team website available</span>
+            </div>
+          </div>
+
+          <!-- TEAM CARD 3 (FTC - has logo + website) -->
+          <a class="team-mentor" href="https://www.astrobytes.org/home" target="_blank" rel="noopener">
+            <div class="banner-wrap">
+              <img class="banner" src="images/M2.jpeg" alt="AstroBytes mentoring photo" loading="lazy">
+            </div>
+            <div class="body">
+              <div class="top-row">
+                <img class="logo" src="images/AstroBytesLogo.jpg" alt="AstroBytes logo" loading="lazy">
+                <div>
+                  <div class="name">AstroBytes</div>
+                  <div class="meta">FTC · Chantilly</div>
+                </div>
               </div>
+              <div class="desc">
+              AstroBytes was in their rookie year, so we helped them get comfortable with how FTC works from the ground up. We did CAD and design check ins, talked through mechanism ideas, and helped debug code when things were not behaving. A big part of it was just being there as they figured out their first build season, helping them make steady progress and feel prepared going into competitions.              </div>
               <span class="site">Visit team website</span>
             </div>
           </a>
         </div>
-
-        <p class="section-text" style="max-width: 980px; margin: 22px auto 0; text-align:left;">
-          Add more teams by duplicating a <strong>team-mentor</strong> card and updating the banner image, logo, team name, team number, and website link.
-        </p>
       </div>
     </div>
   </section>
@@ -753,11 +944,11 @@
 
       <div class="carousel" data-carousel>
         <div class="carousel-frame">
-          <img class="carousel-slide active" src="outreach-images/photo-1.jpg" alt="Outreach photo 1" loading="lazy">
-          <img class="carousel-slide" src="outreach-images/photo-2.jpg" alt="Outreach photo 2" loading="lazy">
-          <img class="carousel-slide" src="outreach-images/photo-3.jpg" alt="Outreach photo 3" loading="lazy">
-          <img class="carousel-slide" src="outreach-images/photo-4.jpg" alt="Outreach photo 4" loading="lazy">
-          <img class="carousel-slide" src="outreach-images/photo-5.jpg" alt="Outreach photo 5" loading="lazy">
+          <img class="carousel-slide active" src="images/O1.jpg" alt="Outreach photo 1" loading="lazy">
+          <img class="carousel-slide" src="images/O2.jpg" alt="Outreach photo 2" loading="lazy">
+          <img class="carousel-slide" src="images/O3.jpeg" alt="Outreach photo 3" loading="lazy">
+          <img class="carousel-slide" src="images/O4.jpeg" alt="Outreach photo 4" loading="lazy">
+          <img class="carousel-slide" src="images/O5.jpg" alt="Outreach photo 5" loading="lazy">
         </div>
 
         <button class="carousel-btn prev" type="button" aria-label="Previous photo">❮</button>
@@ -778,27 +969,23 @@
 
       <div class="card">
         <div class="flyer-grid">
-          <a class="flyer" href="PUT_FLYER_PDF_LINK_1_HERE" target="_blank" rel="noopener">
-            <img class="flyer-thumb" src="flyers/flyer-1.jpg" alt="Flyer thumbnail 1" loading="lazy">
+          <a class="flyer" href="https://drive.google.com/file/d/1ip2Hw81-IfTo8N94A_7VFJDeHJrrWKDj/view?usp=sharing" target="_blank" rel="noopener">
+            <div class="flyer-thumb-wrap">
+              <img class="flyer-thumb" src="images/Camp-Flyer.jpeg" alt="Flyer thumbnail 1" loading="lazy">
+            </div>
             <div class="flyer-body">
               <div class="flyer-title">Robotics Workshop Flyer</div>
-              <div class="flyer-desc">Intro session covering basics, demo robot, and how to join.</div>
+              <div class="flyer-desc">Intro session covering basics and CADing.</div>
             </div>
           </a>
 
-          <a class="flyer" href="PUT_FLYER_PDF_LINK_2_HERE" target="_blank" rel="noopener">
-            <img class="flyer-thumb" src="flyers/flyer-2.jpg" alt="Flyer thumbnail 2" loading="lazy">
-            <div class="flyer-body">
-              <div class="flyer-title">Scrimmage Invite</div>
-              <div class="flyer-desc">Invite flyer for teams, volunteers, and spectators.</div>
+          <a class="flyer" href="https://drive.google.com/file/d/1NMDiQMQuErI1Gu8TnqWMJtR-8S6rnB_N/view?usp=sharing" target="_blank" rel="noopener">
+            <div class="flyer-thumb-wrap">
+              <img class="flyer-thumb" src="images/Donation-Page.png" alt="Flyer thumbnail 3" loading="lazy">
             </div>
-          </a>
-
-          <a class="flyer" href="PUT_FLYER_PDF_LINK_3_HERE" target="_blank" rel="noopener">
-            <img class="flyer-thumb" src="flyers/flyer-3.jpg" alt="Flyer thumbnail 3" loading="lazy">
             <div class="flyer-body">
-              <div class="flyer-title">Team Handout</div>
-              <div class="flyer-desc">Quick overview for outreach tables and school nights.</div>
+              <div class="flyer-title">Donation Handout</div>
+              <div class="flyer-desc">Overview for donations.</div>
             </div>
           </a>
         </div>
@@ -817,32 +1004,88 @@
       <div class="card">
         <div class="people-grid">
           <div class="person">
-            <img src="mentors/mentor-1.jpg" alt="Mentor 1" loading="lazy">
-            <div class="name">Mentor Name</div>
-            <div class="role">Mechanical Mentor</div>
-            <div class="bio">Supports design reviews, mechanism iteration, and build safety.</div>
+            <img src="images/BeaverBots-Logo.png" alt="Mentor 1" loading="lazy">
+            <div class="name">FTC Team BeaverBots</div>
+            <div class="role">Partner</div>
+            <div class="bio">Share parts and design and game strategies.</div>
           </div>
 
           <div class="person">
-            <img src="mentors/mentor-2.jpg" alt="Mentor 2" loading="lazy">
-            <div class="name">Mentor Name</div>
-            <div class="role">Programming Mentor</div>
-            <div class="bio">Helps with autonomous, debugging, and software best practices.</div>
+            <img src="images/RoboLoco-logo.png" alt="Mentor 2" loading="lazy">
+            <div class="name">FRC Team RoboLoco</div>
+            <div class="role">Design Mentor</div>
+            <div class="bio">Helps with design and game strategies.</div>
           </div>
 
           <div class="person">
-            <img src="mentors/mentor-3.jpg" alt="Mentor 3" loading="lazy">
-            <div class="name">Mentor Name</div>
-            <div class="role">Outreach Mentor</div>
-            <div class="bio">Coordinates events, partnerships, and community engagement.</div>
+            <img src="images/Key.png" alt="Mentor 3" loading="lazy">
+            <div class="name">Mr. Key</div>
+            <div class="role">Physics Teacher and Mentor</div>
+            <div class="bio">Teaches physics of the robot such as kinematic equations and launch angles.</div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-          <div class="person">
-            <img src="mentors/mentor-4.jpg" alt="Mentor 4" loading="lazy">
-            <div class="name">Mentor Name</div>
-            <div class="role">Operations Mentor</div>
-            <div class="bio">Supports logistics, documentation, and team workflows.</div>
-          </div>
+  <!-- CONTACT -->
+  <section class="section section-b" id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact Us</h2>
+      <p class="section-text">
+        Questions about FTC, mentoring, or sponsorship? Send us a message and we will get back to you.
+      </p>
+
+      <div class="contact-shell">
+        <div class="contact-grid">
+          <form class="contact-form" action="https://formspree.io/f/movlawrz" method="POST">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required placeholder="Your name">
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="Your email">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" required placeholder="Subject">
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" required placeholder="Write your message"></textarea>
+            </div>
+
+            <div class="contact-actions">
+              <button type="submit" class="primary-btn">Send Message</button>
+            </div>
+          </form>
+
+          <aside class="contact-side" aria-label="Contact details">
+            <h3>Team Contact</h3>
+            <p>
+              Prefer email or phone? Use the details below, or send a message with the form.
+            </p>
+
+            <div class="contact-pill">
+              <div class="k">Email</div>
+              <div class="v"><a href="mailto:cybersagesrobotics@gmail.com">cybersagesrobotics@gmail.com</a></div>
+            </div>
+
+            <div class="contact-pill">
+              <div class="k">Phone</div>
+              <div class="v"><a href="tel:15712670266">571-267-0266</a></div>
+            </div>
+
+            <div class="contact-pill">
+              <div class="k">Sponsorship</div>
+              <div class="v"><a href="https://cybersages.net/sponsor">cybersages.net/sponsor</a></div>
+            </div>
+          </aside>
         </div>
       </div>
     </div>
@@ -878,8 +1121,19 @@
   // Mobile menu
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
-  hamburger.addEventListener('click', () => {
+
+  const toggleMenu = () => {
     mobileMenu.style.display = mobileMenu.style.display === 'block' ? 'none' : 'block';
+  };
+
+  hamburger.addEventListener('click', toggleMenu);
+  hamburger.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') toggleMenu();
+  });
+
+  // Close mobile menu after clicking a link
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => { mobileMenu.style.display = 'none'; });
   });
 
   // Scroll reveal
